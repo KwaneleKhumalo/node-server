@@ -34,9 +34,12 @@ const server = http.createServer(async (req, res) => {
         res.end();
       });
   } else {
+    res.writeHead(404, { "Content-Type": "text/html" });
     res.write(
+      
       "<h1 style=text-align:center; padding:20px;>This Page Does not exist!</h1>"
     );
+    res.end();
   }
 });
 
